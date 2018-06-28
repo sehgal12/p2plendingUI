@@ -1,0 +1,238 @@
+doctype html
+head
+  meta(charset='utf-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Loan Chain
+  link(rel='stylesheet' href='assets/bootstrap/css/bootstrap.min.css')
+  link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+  link(rel='stylesheet' href='assets/fonts/material-icons.css')
+  link(rel='stylesheet' href='assets/css/styles.css')
+header
+  div
+    .container
+      .row
+        .col-lg-2.col-md-2
+          img(src='assets/img/loanchain_logo.png' width='80' height='80')
+        .col-lg-3.col-lg-offset-7.col-md-3.col-md-offset-7
+          .row
+            .col-lg-1.col-md-1
+              i.glyphicon.glyphicon-user
+            .col-lg-4.col-md-4(style='margin-top:15px;')
+              a(href='login.html')
+                span Sign In
+            .col-lg-1.col-md-1
+              i.glyphicon.glyphicon-edit
+            .col-lg-4.col-md-4(style='margin-top:15px;')
+              a(href='index.html')
+                span Sign Up
+  nav.navbar.navbar-default.affix-top(data-spy='affix' data-offset-top='100' style='width: 100%; top:0; z-index:99;')
+    .container
+      .navbar-header
+        button.navbar-toggle.collapsed(data-toggle='collapse' data-target='#navcol-1')
+          span.sr-only Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+      #navcol-1.collapse.navbar-collapse
+        ul.nav.navbar-nav.navbar-right
+          li(role='presentation')
+            a(href='#') Personal Loan
+          li(role='presentation')
+            a(href='#') Investment 
+          li(role='presentation')
+            a(href='#') Active Borrowers
+          li(role='presentation')
+            a(href='#') About Us
+.background-img
+  .container(style='background:#fff;')
+    form(action='homepage_borrower' ,='' method='post')
+      .row
+        .col-md-12
+          .col-md-12
+            h3.text-left Loan Details
+            hr
+            .row
+              .col-lg-4.col-md-4.col-sm-12.col-xs-12(style='display: -webkit-inline-box;')
+                i.fa.fa-database
+                .group
+                  input#amount(type='number' name='amount' required='')
+                  span.highlight
+                  span.bar
+                  label Loan Amount
+              input#id(type='hidden' name='id' value=id required='')
+              .col-lg-4.col-md-4.col-sm-12.col-xs-12(style='display: -webkit-inline-box;')
+                i.glyphicon.glyphicon-calendar
+                .group
+                  input#tenure(type='text' name='tenure' required='')
+                  span.highlight
+                  span.bar
+                  label Tenure of Loan
+              .col-lg-4.col-md-4.col-sm-12.col-xs-12(style='display: -webkit-inline-box;')
+                i.glyphicon.glyphicon-calendar
+                .group
+                  input#purpose(type='text' name='purpose' required='')
+                  span.highlight
+                  span.bar
+                  label Purpose
+            .row
+              .col-lg-12.col-md-12.col-sm-12.col-xs-12(style='display: -webkit-inline-box;')
+                i.glyphicon.glyphicon-list
+                .group
+                  input#description(type='text' name='description' required='')
+                  span.highlight
+                  span.bar
+                  label Description of Loan Purpose
+            br
+            h3.text-left Personal Details
+            hr
+            .row
+              .col-lg-6.col-md-6.col-sm-12.col-xs-12
+                .row
+                  .col-lg-1.col-md-1
+                    i.fa.fa-intersex(style='font-weight:600;font-size:18px;margin-top:10px;')
+                  .col-lg-4.col-md-4(style='margin-left:20px;')
+                    .radio
+                      span
+                        input#married(type='radio' name='married' value='n' style='width:auto !important;')
+                        |  Single
+                  .col-lg-4.col-md-4(style='margin-left:20px;')
+                    .radio
+                      span
+                        input#married(type='radio' name='married' value='y' style='width:auto !important;')
+                        |  Married
+              .col-lg-6.col-md-6.col-sm-12.col-xs-12(style='display: -webkit-inline-box;')
+                i.glyphicon.glyphicon-calendar
+                .group
+                  input#dob(type='date' name='dob' required='')
+                  span.highlight
+                  span.bar
+            .row
+              .col-lg-6.col-md-6.col-sm-12.col-xs-12(style='display: -webkit-inline-box;')
+                i.fa.fa-building
+                .group
+                  input#pincode(type='number' name='pincode' required='')
+                  span.highlight
+                  span.bar
+                  label Pincode
+              .col-lg-6.col-md-6.col-sm-12.col-xs-12(style='display: -webkit-inline-box;')
+                i.fa.fa-building
+                .group
+                  input#city(type='text' name='city' required='')
+                  span.highlight
+                  span.bar
+                  label City
+            br
+            h3.text-left Employment Details
+            hr
+            .row
+              .col-lg-6.col-md-6.col-sm-12.col-xs-12(style='display: -webkit-inline-box;')
+                i.glyphicon.glyphicon-user
+                .group
+                  select
+                    option#job(name='job' value='Salaried') Salaried Employee
+                    option#job(name='job' value='student') Student
+                    option#job(name='job' value='Self-Employed') Self-Employed
+                  span.highlight
+                  span.bar
+                  label
+              .col-lg-6.col-md-6.col-sm-12.col-xs-12(style='display: -webkit-inline-box;')
+                i.fa.fa-building
+                .group
+                  input#exp(type='number' name='exp' required='')
+                  span.highlight
+                  span.bar
+                  label Total Employment Experience
+            br
+            .row
+              .col-lg-4.col-md-4.col-sm-12.col-xs-12(style='display: -webkit-inline-box;')
+                i.fa.fa-briefcase
+                .group
+                  input#prof(type='text' name='prof' required='')
+                  span.highlight
+                  span.bar
+                  label Profession Type
+              .col-lg-4.col-md-4.col-sm-12.col-xs-12(style='display: -webkit-inline-box;')
+                i.fa.fa-database
+                .group
+                  input#turnover(type='text' name='turnover' required='')
+                  span.highlight
+                  span.bar
+                  label Gross Annual Turnover(in Rs.)
+              .col-lg-4.col-md-4.col-sm-12.col-xs-12(style='display: -webkit-inline-box;')
+                i.fa.fa-line-chart
+                .group
+                  input#profit(type='number' name='profit' required='')
+                  span.highlight
+                  span.bar
+                  label Gross Annual Profit(in Rs.)
+            br
+            h3.text-left Financial Details
+            hr
+            .row
+              .col-lg-12.col-md-12.col-sm-12.col-xs-12(style='display: -webkit-inline-box;')
+                i.glyphicon.glyphicon-map-marker
+                .group
+                  input#residence(type='text' name='residence' required='')
+                  span.highlight
+                  span.bar
+                  label Residential Type
+            .row
+              .col-lg-6.col-md-6.col-sm-12.col-xs-12(style='display: -webkit-inline-box;')
+                i.fa.fa-money
+                .group
+                  input#sp_inc(type='number' name='sp_inc' required='')
+                  span.highlight
+                  span.bar
+                  label Spouse Monthly Income (in Rs)
+              .col-lg-6.col-md-6.col-sm-12.col-xs-12(style='display: -webkit-inline-box;')
+                i.fa.fa-money
+                .group
+                  input#other_inc(type='number' name='other_inc' required='')
+                  span.highlight
+                  span.bar
+                  label Any Other Monthly Income (in Rs)
+            .row
+              .col-lg-6.col-md-6.col-sm-12.col-xs-12
+                span(style='font-size:15px;margin-left:20px;') Do You have any Loan running?
+                .row
+                  .col-lg-1.col-md-1
+                    i.fa.fa-database(style='font-weight:600;font-size:18px;margin-top:10px;')
+                  .col-lg-4.col-md-4(style='margin-left:20px;')
+                    .radio
+                      span
+                        input#loan(type='radio' name='loan' value='y' style='width:auto !important;')
+                        |  Yes
+                  .col-lg-4.col-md-4(style='margin-left:20px;')
+                    .radio
+                      span
+                        input#loan(type='radio' name='loan' value='n' style='width:auto !important;')
+                        |  No
+            .row
+              .col-lg-6.col-md-6.col-sm-12.col-xs-12
+                span(style='font-size:15px;margin-left:20px;') Do You have any Credit cards?
+                .row
+                  .col-lg-1.col-md-1
+                    i.fa.fa-credit-card(style='font-weight:600;font-size:18px;margin-top:10px;')
+                  .col-lg-4.col-md-4(style='margin-left:20px;')
+                    .radio
+                      span
+                        input#credcard(type='radio' name='credcard' value='y' style='width:auto !important;')
+                        |  Yes
+                  .col-lg-4.col-md-4(style='margin-left:20px;')
+                    .radio
+                      span
+                        input#credcard(type='radio' name='credcard' value='n' style='width:auto !important;')
+                        |  No
+            .row(style='margin-left:30px;')
+              .col-lg-12.col-md-12.col-sm-12.col-xs-12
+                br
+                .row(style='text-align:center;')
+                  .col-lg-12.col-md-12.col-sm-12.col-xs-12
+                    button.btn.btn-primary.btn-lg(type='submit' style='width:150px;') SUBMIT 
+                br
+                br
+      form
+script(src='assets/js/jquery.min.js')
+script(src='assets/bootstrap/js/bootstrap.min.js')
+script(src='assets/js/untitled.js')
+
